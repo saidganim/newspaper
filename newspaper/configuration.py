@@ -13,7 +13,7 @@ __copyright__ = 'Copyright 2014, Lucas Ou-Yang'
 import logging
 
 from .parsers import Parser
-from .text import (StopWords, StopWordsArabic, StopWordsChinese,
+from .text import (StopWords, StopWordsArabic, StopWordsChinese, StopWordsTajik,
                    StopWordsKorean, StopWordsHindi, StopWordsJapanese, StopWordsThai)
 from .version import __version__
 
@@ -110,6 +110,8 @@ class Configuration(object):
             return StopWordsHindi
         elif language == 'zh':
             return StopWordsChinese
+        elif language == 'tg':
+            return StopWordsTajik
         # Persian and Arabic Share an alphabet
         # There is a persian parser https://github.com/sobhe/hazm, but nltk is likely sufficient
         elif language == 'ar' or language == 'fa':

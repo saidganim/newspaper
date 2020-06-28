@@ -100,6 +100,16 @@ class StopWords(object):
         ws.set_stop_words(overlapping_stopwords)
         return ws
 
+class StopWordsTajik(StopWords):
+    """Tajik segmentation
+    """
+    def __init__(self, language='tg'):
+        super(StopWordsTajik, self).__init__(language='tg')
+
+    def candidate_words(self, stripped_input):
+        return stripped_input
+
+
 
 class StopWordsChinese(StopWords):
     """Chinese segmentation
